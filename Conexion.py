@@ -4,9 +4,9 @@ import sys
 class Conexion():
     _DB = "database"
     _USERNAME = "username"
-    _HOST = "127.0.0.1"
+    _HOST = "host"
     _PASSWORD = "password"
-    _PORT = "5432"
+    _PORT = "port"
     _conexion = None
 
     @classmethod

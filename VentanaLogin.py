@@ -11,7 +11,7 @@ class VentanaLogin(tk.Tk):
         #Configuracion de la ventana
         self.title("Login")
         self.resizable(0, 0)
-        self.iconbitmap("login-image.ico")
+        self.iconbitmap("images/login-image.ico")
 
         # Obtencion de las dimensiones de la pantalla
         self._x = (self.winfo_screenwidth() - self.winfo_reqwidth()) / 2
@@ -39,8 +39,8 @@ class VentanaLogin(tk.Tk):
         boton_iniciar_sesion1.pack()
         boton_registrarse1 = ttk.Button(self, text="Registrarse", width=30, command=lambda: self._crear_ventana_secundaria(1))
         boton_registrarse1.pack()
-        boton_eliminar = ttk.Button(self, text="Eliminar usuario", width=30)
-        boton_eliminar.pack()
+        boton_eliminar1 = ttk.Button(self, text="Eliminar usuario", width=30, command=lambda: self._crear_ventana_secundaria(2))
+        boton_eliminar1.pack()
         boton_salir = ttk.Button(self, text="Salir", width=30, command=self._salir)
         boton_salir.pack(side=BOTTOM)
 
@@ -52,7 +52,7 @@ class VentanaLogin(tk.Tk):
         self._ventana2 = tk.Toplevel()
         self._ventana2.geometry("300x120+%d+%d" % (self._x, self._y))
         self._ventana2.resizable(0, 0)
-        self._ventana2.iconbitmap("login-image.ico")
+        self._ventana2.iconbitmap("images/login-image.ico")
 
         self._ventana2.columnconfigure(0, weight=1)
         self._ventana2.columnconfigure(1, weight=1)
@@ -70,10 +70,14 @@ class VentanaLogin(tk.Tk):
             self._ventana2.title("Iniciar sesion")
             boton_iniciar_sesion = ttk.Button(self._ventana2, text="Iniciar sesion", command=self._iniciar_sesion)
             boton_iniciar_sesion.grid(row=2, column=0, columnspan=2, padx=10, pady=10)
-        else:
+        elif num == 1:
             self._ventana2.title("Registrarse")
             boton_registrarse = ttk.Button(self._ventana2, text="Registrarse", command=self._registrarse)
             boton_registrarse.grid(row=2, column=0, columnspan=2, padx=10, pady=10)
+        elif num == 2:
+            self._ventana2.title("Eliminar usuario")
+            boton_eliminar = ttk.Button(self._ventana2, text="Eliminar", command=self._eliminar)
+            boton_eliminar.grid(row=2, column=0, columnspan=2, padx=10, pady=10)
 
     def _iniciar_sesion(self):
         usuario_var = self._entry_var_usuario.get()
@@ -119,7 +123,23 @@ class VentanaLogin(tk.Tk):
 
 
     def _eliminar(self):
-        pass
+        usuario_var = self._entry_var_usuario.get()
+        # print(usuario_var)
+        contraseña_var = self._entry_var_contraseña.get()
+        # print(contraseña_var)
+        usuario = Usuario(username=usuario_var, password=contraseña_var)
+        var = UsuarioDAO.eliminar(usuario)
+        if var:
+            # print("Existe el usuario, puede eliminarse")
+            messagebox.showinfo("Eliminar usuario", "Se ha eliminado el usuario correctamente")
+            self._limpiar_entry()
+            self._ventana2.destroy()
+        else:
+            # print("No existe el usuario, no puede eliminarse")
+            messagebox.showerror("Eliminar usuario", "No existe el usuario para eliminar, ingrese los datos correspondientes")
+            self._limpiar_entry()
+            self._ventana2.destroy()
+
 
 
     def _salir(self):

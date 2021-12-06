@@ -57,9 +57,19 @@ class UsuarioDAO:
     def eliminar(cls, usuario):
         with Conexion.obtener_conexion() as conexion:
             with conexion.cursor() as cursor:
-                valores = (usuario.id_usuario, )
-                cursor.execute(cls._ELIMINAR, valores)
-                return cursor.rowcount
+                valores = (usuario.username, usuario.password)
+                cursor.execute(cls._SELECCIONAR, valores)
+                comprobacion = cursor.fetchone()
+                # print(comprobacion)
+                if comprobacion:
+                    # Existe el usuario y contraseña
+                    # print("Existe el usuario")
+                    cursor.execute(cls._ELIMINAR, (comprobacion, ))
+                    return cursor.rowcount
+                else:
+                    # No existe el usuario
+                    # print("No existe el usuario")
+                    return 0
 
 
 # if __name__ == "__main__":
@@ -79,6 +89,6 @@ class UsuarioDAO:
     # print(inicio)
 
     #Eliminar usuario
-    # usuario = Usuario(id_usuario=2)
+    # usuario = Usuario(username="jorge", password="jorgesito")
     # eliminados = UsuarioDAO.eliminar(usuario)
     # print(eliminados)
