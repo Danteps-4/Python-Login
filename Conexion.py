@@ -2,10 +2,10 @@ import psycopg2 as bd
 import sys
 
 class Conexion():
-    _DB = "khokdvpo"
-    _USERNAME = "khokdvpo"
-    _HOST = "kesavan.db.elephantsql.com"
-    _PASSWORD = "OVQpLp83Mrs5KbKn1bltCzWZTvXLyK_n"
+    _DB = "database"
+    _USERNAME = "username"
+    _HOST = "127.0.0.1"
+    _PASSWORD = "password"
     _PORT = "5432"
     _conexion = None
 
