@@ -2,7 +2,7 @@
 
 Login for an application written on Python using **tkinter** and **Postgresql**.
 
-###Connect to Database
+### Connect to Database
 To connect to a **Postgresql database** you will have to head to [Conexion.py](http://github.com/Danteps-4/Python-Login/blob/master/Conexion.py "Conexion.py") and fill the necessary fields for connecting to an existing database.
 
 ```python
@@ -30,7 +30,8 @@ Filling this fields, the function will automatically connect to the specified da
 ```
 This method will return the connection to an object called `<_conexion>` previosly defined in this same class [Conexion.py](http://github.com/Danteps-4/Python-Login/blob/master/Conexion.py "Conexion.py"). If there is an error with the parameters you filled previously, on the console it will display the error and the program will be terminated for itself.
 
-###Actions
+### Actions
+
 On the login-app you can execute the following actions:
 
 1. **Login**: the user will enter his username and password. If the user exists, it will log in, but if the user does not exists, it will show a messagebox.showerror saying that the user do not exist so it is not possible to log in.
@@ -38,7 +39,7 @@ On the login-app you can execute the following actions:
 3. **Delete user (not added)**
 4. **Exit**: this action will terminate the program completely.
 
-###Images
+### mages
 Main window:
 
 ![ventana_login](https://user-images.githubusercontent.com/77952824/144790426-6d8955db-361f-4c27-8e80-a5611e72ca38.png)
