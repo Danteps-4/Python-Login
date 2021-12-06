@@ -49,7 +49,7 @@ On the login-app you can execute the following actions:
 
 1. **Login**: the user will enter his username and password. If the user exists, it will log in, but if the user does not exists, it will show a messagebox.showerror saying that the user do not exist so it is not possible to log in.
 2. **Register**: the user will enter his username and password. The user will be registered in the database and will be asked to log in to get access to the main program.
-3. **Delete user**: the user will enter his username and password. If the user exists, it will be delete from the database, but if the user does not exists it will show a messagebox.showerror saying that the user do not exist so it is not possible to delete it.
+3. **Delete user**: the user will enter his username and password. If the user exists, it will be deleted from the database, but if the user does not exists it will show a messagebox.showerror saying that the user do not exist so it is not possible to delete it.
 4. **Exit**: this action will terminate the program completely.
 
 ### Images
