@@ -53,22 +53,20 @@ On the login-app you can execute the following actions:
 4. **Exit**: this action will terminate the program completely.
 
 ### Images
-#### Windows:
-Main:
+Main page:
 
 ![ventana_login](https://user-images.githubusercontent.com/77952824/144902782-fcda9478-ca03-4c6a-8196-3394f02f07cb.png)
 
-Login:
+Login page:
 
-![iniciar_sesion](https://user-images.githubusercontent.com/77952824/144902779-cef33365-5a67-496c-890d-b5abf0f94f37.png)
+![iniciar_sesion](https://user-images.githubusercontent.com/77952824/144954516-c019ad2a-de2e-49c0-b79d-e0dadd31381f.png)
 
-Register:
+Register page:
 
-![registrarse](https://user-images.githubusercontent.com/77952824/144902780-1c16f121-d4cc-4d00-bdc4-e063ced0db56.png)
+![registrarse](https://user-images.githubusercontent.com/77952824/144954518-e35724f9-d6d3-48b4-b7f1-bfb89cdb14b2.png)
 
-Delete:
+Delete page:
 
-![eliminar](https://user-images.githubusercontent.com/77952824/144902771-ea9576af-137d-4ee9-8dab-4012b625c4b6.png)
-
+![eliminar](https://user-images.githubusercontent.com/77952824/144954513-b3a36374-987d-47af-84f2-195dc90dc7c8.png)
 
 Different features and improvements  will be added both in the interface and in the logic for a better user experience.
